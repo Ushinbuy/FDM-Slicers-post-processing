@@ -4,12 +4,6 @@ setlocal EnableExtensions EnableDelayedExpansion
 
 set ROOT_DIR=%~dp0
 
-rem Wrapper script for starting filaswitch. Needed in order to support
-rem Slic3r automatic post-processing as Slic3r always puts the file path
-rem after all commans -> default argument ordering doesn't work
-
-rem switch file and hwconfig argument order
-
 set "ARG1=%1"
 set "ARG2=%2"
 

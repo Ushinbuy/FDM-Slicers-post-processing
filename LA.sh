@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Wrapper script for starting filaswitch. Needed in order to support
-# Slic3r automatic post-processing as Slic3r always puts the file path
-# after all commans -> default argument ordering doesn't work
-
 # set -x == set -o xtrace
 
 PATH+=:/usr/local/bin/
