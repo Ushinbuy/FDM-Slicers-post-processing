@@ -1,0 +1,16 @@
+# This .gitignore file should be placed at the root of your project directory
+#
+# Ignore folders
+/[Tt]est/
+
+# Gradle cache directory
+.gradle/
+
+#ignore log file
+log.txt
+
+# gcode files
+*.gcode
+
+# Ignore macos automaticly created files
+**/.DS_Store
