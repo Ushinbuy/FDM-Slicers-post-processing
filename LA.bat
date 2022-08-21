@@ -8,9 +8,9 @@ set "ARG1=%1"
 set "ARG2=%2"
 
 IF "%ARG2%" == "-s3d" (
-    py -3 "%ROOT_DIR%\linearAdvance.py" %1 %2 > %ROOT_DIR%\log.txt 2>&1
+    py -3 "%ROOT_DIR%\src\linearAdvance.py" %1 %2 > %ROOT_DIR%\log.txt 2>&1
 ) ELSE IF "%ARG1%" == "-ps" (
-    py -3 "%ROOT_DIR%\linearAdvance.py" %2 %1 > %ROOT_DIR%\log.txt 2>&1
+    py -3 "%ROOT_DIR%\src\linearAdvance.py" %2 %1 > %ROOT_DIR%\log.txt 2>&1
 ) ELSE (
     echo "Error in argument of type of slicer" %1 %2> %ROOT_DIR%\log.txt 2>&1
 )

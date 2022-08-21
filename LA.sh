@@ -14,10 +14,10 @@ echo "${@}"
 
 if [ "$2" == "-s3d" ]; then
   echo "start script"
-  python3 $DIR/linearAdvance.py "${@}"
+  python3 $DIR/src/linearAdvance.py "${@}"
 elif [ "$1" == "-ps" ]; then
   echo "start script"
-  python3 $DIR/linearAdvance.py "$2" "$1"
+  python3 $DIR/src/linearAdvance.py "$2" "$1"
 else
   echo "Error in argument of type of slicer"
 fi
