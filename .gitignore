@@ -14,3 +14,6 @@ log.txt
 
 # Ignore macos automaticly created files
 **/.DS_Store
+
+# ignore py cache
+*.pyc

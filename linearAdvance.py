@@ -1,68 +1,11 @@
-
+#!/usr/bin/env python3
 
 import sys
 import re
-from pathlib import Path
 
-suffix_gcode = '.gcode'
+from gcodeFileManager import GcodeFileHandler
 
-class FileOperation:
-    maxValueLA = ""
-    minValueLA = ""
-
-    def __init__(self, filename) -> None:
-        self.__fileName = filename
-
-    @property
-    def property_filename(self):
-        return self.__fileName
-
-    @property_filename.setter
-    def property_filename(self, filename):
-        print(filename)
-        self.__fileName = filename
-
-    def __checkPropertyIsEmpty(self):
-        if self.__fileName is None:
-            raise FileNotFoundError
-        elif self._fileBuffer is None:
-            raise BufferError
-
-    def __readFileToFileBuffer(self):
-        if self.__fileName is None:
-            raise FileNotFoundError
-        with open(self.__fileName, 'r') as file_to_read:
-            self._fileBuffer = str(file_to_read.read())
-        file_to_read.close()
-
-    def __write_buffer2new_file(self):
-        self.__checkPropertyIsEmpty()
-        new_filename = self.__fileName#.replace(Path(self.__fileName).name, "Copy_" + Path(self.__fileName).name)
-        file_to_write = open(new_filename, 'wb')
-        file_to_write.write(self._fileBuffer.encode())
-        file_to_write.close()
-        return new_filename
-
-    def _searchLaValue(self):
-        pass
-
-    def _patchBuffer(self):
-        pass
-
-    def automatic_work(self):
-        self.__readFileToFileBuffer()
-        self._searchLaValue()
-        self._patchBuffer()
-        return self.__write_buffer2new_file()
-
-    def uncorrectSlicerInArguments(self):
-        print("Uncorrect slicer choosen")
-        print("'-s3D'   for Simplify3D")
-        print("'-ps'    for PrusaSlicer")
-        raise ValueError
-
-
-class Simplify(FileOperation):
+class SimplifyLinearAdvance(GcodeFileHandler):
     def _searchLaValue(self):
         searchString = "; LA value "
         indexStart = self._fileBuffer.find(searchString)
@@ -92,7 +35,7 @@ class Simplify(FileOperation):
         self._fileBuffer = "".join(tempBuffer)
 
 
-class PrusaSlicer(FileOperation):
+class PrusaSlicerLinearAdvance(GcodeFileHandler):
     def _searchLaValue(self):
         searchString = "; LA value "
         indexStart = self._fileBuffer.find(searchString)
@@ -130,9 +73,9 @@ if __name__ == "__main__":
         print(slicerArgument)
 
         if(slicerArgument == "-s3d"):
-            do_file = Simplify(str(sys.argv[1]))
+            do_file = SimplifyLinearAdvance(str(sys.argv[1]))
         elif(slicerArgument == "-ps"):
-            do_file = PrusaSlicer(str(sys.argv[1]))
+            do_file = PrusaSlicerLinearAdvance(str(sys.argv[1]))
         else:
             print("Error in slicer argument")
             print("Args is " + str(sys.argv))
