@@ -3,8 +3,6 @@
 from pathlib import Path
 debug = False
 
-suffix_gcode = '.gcode'
-
 class GcodeFileHandler:
     maxValueLA = ""
     minValueLA = ""
