@@ -13,9 +13,8 @@ class SimplifyLinearAdvance(GcodeFileHandler):
         tempString = self._fileBuffer[indexStart + len(searchString): indexStop]
         anotherIndexStop = tempString.find(",")
         if(anotherIndexStop > 0):
-            print(tempString)
+            print("Finded LA pattern" + tempString)
             indexStop = anotherIndexStop + indexStart + len(searchString)
-            print(indexStart,indexStop)
         self.maxValueLA = self._fileBuffer[indexStart + len(searchString): indexStop]
 
         listOfValue = re.findall("[+-]? *(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?", self.maxValueLA)
@@ -43,9 +42,8 @@ class PrusaSlicerLinearAdvance(GcodeFileHandler):
         tempString = self._fileBuffer[indexStart + len(searchString): indexStop]
         anotherIndexStop = tempString.find(",")
         if(anotherIndexStop > 0):
-            print(tempString)
+            print("Finded LA pattern" + tempString)
             indexStop = anotherIndexStop + indexStart + len(searchString)
-            print(indexStart,indexStop)
         self.maxValueLA = self._fileBuffer[indexStart + len(searchString): indexStop]
         listOfValue = re.findall("[+-]? *(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?", self.maxValueLA)
         self.minValueLA = self.maxValueLA.replace(str(listOfValue[-1]), '0')
@@ -69,8 +67,8 @@ class PrusaSlicerLinearAdvance(GcodeFileHandler):
 if __name__ == "__main__":
     try:
         slicerArgument = str(sys.argv[2]).lower()
-        print(str(sys.argv[1]))
-        print(slicerArgument)
+        print("\r\n File argemunt is " + str(sys.argv[1]))
+        print("\r\nSlicer argument is " + slicerArgument)
 
         if(slicerArgument == "-s3d"):
             do_file = SimplifyLinearAdvance(str(sys.argv[1]))
@@ -82,7 +80,7 @@ if __name__ == "__main__":
             # print("Arg 2 is " + slicerArgument)
             sys.exit(0)
         newFilename = do_file.automatic_work()
-        print("Success " + newFilename)
+        print("Success!!! \r\n\r\nNew file is" + newFilename)
     except FileExistsError:
         print("Uncorrect name")
     except Exception as e:

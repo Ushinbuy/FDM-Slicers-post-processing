@@ -22,5 +22,5 @@ else
   echo "Error in argument of type of slicer"
 fi
 
-# /Users/nik-nik/Desktop/Profiles/Scripts/LA.sh [output_filepath] -s3d
-# /Users/nik-nik/Desktop/Profiles/Scripts/LA.sh -ps;
+# /Users/user/Scripts/LA.sh [output_filepath] -s3d
+# /Users/user/Scripts/LA.sh -ps;
