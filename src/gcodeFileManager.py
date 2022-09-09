@@ -16,7 +16,7 @@ class GcodeFileHandler:
 
     @property_filename.setter
     def property_filename(self, filename):
-        print(filename)
+        print("Filename is " + filename)
         self.__fileName = filename
 
     def __checkPropertyIsEmpty(self):

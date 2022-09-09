@@ -13,9 +13,8 @@ class SimplifyLinearAdvance(GcodeFileHandler):
         tempString = self._fileBuffer[indexStart + len(searchString): indexStop]
         anotherIndexStop = tempString.find(",")
         if(anotherIndexStop > 0):
-            print(tempString)
+            print("Finded LA pattern" + tempString)
             indexStop = anotherIndexStop + indexStart + len(searchString)
-            print(indexStart,indexStop)
         self.maxValueLA = self._fileBuffer[indexStart + len(searchString): indexStop]
 
         listOfValue = re.findall("[+-]? *(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?", self.maxValueLA)
@@ -43,9 +42,8 @@ class PrusaSlicerLinearAdvance(GcodeFileHandler):
         tempString = self._fileBuffer[indexStart + len(searchString): indexStop]
         anotherIndexStop = tempString.find(",")
         if(anotherIndexStop > 0):
-            print(tempString)
+            print("Finded LA pattern" + tempString)
             indexStop = anotherIndexStop + indexStart + len(searchString)
-            print(indexStart,indexStop)
         self.maxValueLA = self._fileBuffer[indexStart + len(searchString): indexStop]
         listOfValue = re.findall("[+-]? *(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?", self.maxValueLA)
         self.minValueLA = self.maxValueLA.replace(str(listOfValue[-1]), '0')
