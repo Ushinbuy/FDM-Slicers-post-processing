@@ -12,7 +12,7 @@ Script add Linear Advanced (or Pressure Advanced) on wall and disable this for i
 
 `; LA value M572 D0 S0.08`
 
-, where `M572 D0` - Linear Advance command for youre printer system. In RRF it is `M572 D0`, for Marlin it is `M900`, for Repitier it is `TODO()`. The `S0.08` is the value of Linaear Advance.
+, where `M572 D0` - Linear Advance command for youre printer system. In RRF it is `M572 D0`, for Marlin it is `M900`, for Repitier it is `M233`. The `S0.08` is the value of Linaear Advance.
 
 2. In "Adittional terminal commands for post processing" add 
 
@@ -28,11 +28,13 @@ Script add Linear Advanced (or Pressure Advanced) on wall and disable this for i
 
 `; LA value M572 D0 S0.08`
 
-, where `M572 D0` - Linear Advance command for youre printer system. In RRF it is `M572 D0`, for Marlin it is `M900`, for Repitier it is `TODO()`. The `S0.08` is the value of Linaear Advance.
+, where `M572 D0` - Linear Advance command for youre printer system. In RRF it is `M572 D0`, for Marlin it is `M900`, for Repitier it is `M233`. The `S0.08` is the value of Linaear Advance.
 
 <img src = pictures/LA_PS_01.png>
 
-2. In "Print Settings -> Output oprions -> Post-processing scripts" add
+2. In "Print Settings -> Output oprions -> Output file" set "Verboose G-code"
+
+3. In "Print Settings -> Output oprions -> Post-processing scripts" add
 
 `/Users/user/Scripts/LA.sh -ps;`
 

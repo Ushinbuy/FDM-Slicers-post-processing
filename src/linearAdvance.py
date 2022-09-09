@@ -80,7 +80,7 @@ if __name__ == "__main__":
             # print("Arg 2 is " + slicerArgument)
             sys.exit(0)
         newFilename = do_file.automatic_work()
-        print("Success " + newFilename)
+        print("Success!!! \r\n\r\nNew file is" + newFilename)
     except FileExistsError:
         print("Uncorrect name")
     except Exception as e:
