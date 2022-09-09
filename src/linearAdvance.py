@@ -67,8 +67,8 @@ class PrusaSlicerLinearAdvance(GcodeFileHandler):
 if __name__ == "__main__":
     try:
         slicerArgument = str(sys.argv[2]).lower()
-        print(str(sys.argv[1]))
-        print(slicerArgument)
+        print("\r\n File argemunt is " + str(sys.argv[1]))
+        print("\r\nSlicer argument is " + slicerArgument)
 
         if(slicerArgument == "-s3d"):
             do_file = SimplifyLinearAdvance(str(sys.argv[1]))

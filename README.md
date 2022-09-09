@@ -16,9 +16,9 @@ Script add Linear Advanced (or Pressure Advanced) on wall and disable this for i
 
 2. In "Adittional terminal commands for post processing" add 
 
-`/Users/nik-nik/Desktop/Profiles/Scripts/LA.sh [output_filepath] -s3d`
+`/Users/user/Scripts/LA.sh [output_filepath] -s3d`
 
-, where `/Users/nik-nik/Desktop/Profiles/Scripts/LA.sh` - directory of this script (on Mac and Linux `LA.sh`, for Windows `LA.bat`). The picture bellow show this as example. 
+, where `/Users/user/Scripts/LA.sh` - directory of this script (on Mac and Linux `LA.sh`, for Windows `LA.bat`). The picture bellow show this as example. 
 
 <img src = pictures/LA_S3D.png>
 
@@ -34,9 +34,9 @@ Script add Linear Advanced (or Pressure Advanced) on wall and disable this for i
 
 2. In "Print Settings -> Output oprions -> Post-processing scripts" add
 
-`/Users/nik-nik/Desktop/Profiles/Scripts/LA.sh -ps;`
+`/Users/user/Scripts/LA.sh -ps;`
 
-, where `/Users/nik-nik/Desktop/Profiles/Scripts/LA.sh` - directory of this script (on Mac and Linux `LA.sh`, for Windows `LA.bat`). The picture bellow show this as example. 
+, where `/Users/user/Scripts/LA.sh` - directory of this script (on Mac and Linux `LA.sh`, for Windows `LA.bat`). The picture bellow show this as example. 
 
 <img src = pictures/LA_PS_02.png>
 
